@@ -1,5 +1,6 @@
 package makeanappointment.pmc_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -14,6 +15,7 @@ public class Medico {
     private String numeroLicencia;
 
     @OneToMany(mappedBy = "medico")
+    @JsonIgnore
     private Set<Cita> citas;
 
     public Long getId() {

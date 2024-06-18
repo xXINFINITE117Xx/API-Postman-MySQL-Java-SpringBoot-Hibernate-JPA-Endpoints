@@ -1,5 +1,6 @@
 package makeanappointment.pmc_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -15,6 +16,7 @@ public class Paciente {
     private String dni;
 
     @OneToMany(mappedBy = "paciente")
+    @JsonIgnore
     private Set<Cita> citas;
 
     public Long getId() {
